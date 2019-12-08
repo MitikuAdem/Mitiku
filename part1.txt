@@ -1,0 +1,61 @@
+// js view for B&B provider page
+
+create table student(s_id varchar(4),s_name varchar(11),s_age int,roll_no int);
+
+insert into student values
+
+('s1','Rediet',18,1),
+
+('s2','Abebe',23,2),
+
+('s3','Solomon',40,3),
+
+('s4','Aman',18,4);
+
+create table course (c_id char(2),c_name varchar(12),roll_no int);
+
+insert into course values
+('c1','DSA',1),
+
+('c2','Programming',2),
+
+('c3','DB',5)
+;
+
+create table STUDENT_COURSE (s_id char(2),c_id char(2));
+
+insert into STUDENT_COURSE values
+
+('s1','c1'),
+
+('s1','c3'),
+
+('s2','c1'),
+
+('s3','c2'),
+
+('s4','c2')
+;
+
+select * from student group by s_age;
+
+select s_name from student
+
+where s_id in (select s_id from STUDENT_COURSE where c_id in (select c_id from course where c_name like 'DSA' or 'DB'))
+order by roll_no;
+
+
+select s_name from student
+where roll_no not in (select roll_no from course where c_name ='DSA' or c_name = 'DB')
+order by roll_no desc;
+
+select student.s_id,student.s_name,course.c_id,course.c_name 
+from student,course
+where student.roll_no in(select roll_no from student where s_age>=18) and course.roll_no in (select roll_no from student where s_age>=18) ;
+
+
+select student.s_name,student.s_age,course.c_name
+from student
+inner join course
+on student.roll_no=course.roll_no
+
