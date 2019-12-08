@@ -1,0 +1,33 @@
+// view js file for B&B provider page
+
+
+export const B&BProveder{
+get_ownedBnbld: () =>ownedBnbld.value,
+get_bnbName:() => bnbName.value,                     
+get_bnbAddress: () => bnbAddress.value,
+hasAerobics: () => hasAerobics.value,
+serviceSchedule:() => serviceSchedule.value,
+hasSwimming:() => hasSwimming.vlaue,
+hasTennis:() => hasTennis.value,
+get_roomNumber:() => roomNumber.value,
+get_stayDuration:() => stayDuration.value
+
+};
+const ownedBnbld = document.getElementById("ownedBnbld");
+const bnbName = document.getElementById("bnbName");
+const bnbAddress = document.getElementById("bnbAddress");
+// attribute related to Gym
+
+const hasAerobics = document.getElementById("hasAerobics");
+const hasMachinary = document.getElementById("hasMachinary");
+const serviceSchedule = document.getElementById("serviceSchedule"); 
+
+// attribute related to Sporting 
+const hasSwimming = document.getElementById("hasSwimming");
+const hasTennis = document.getElementById("hasTennis");
+const serviceSchedule = document.getElementById("serviceSchedule");
+
+// attribute related to Room
+
+const roomNumber = document.getElementById("roomNumber");
+const stayDuration = document.getElementById("stayDuration");
