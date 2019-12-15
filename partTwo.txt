@@ -1,0 +1,32 @@
+// Model Class for Room
+
+class Room{
+var #roomNumber;
+var #roomtype;
+var #stayDuration;
+constructor(roomNumber,roomtype,stayDuration)
+{
+ this.#roomNumber = roomNumber;
+ this.#roomtype = roomtype;
+ this.#stayDuration = stayDuration;
+}
+/////////////////////////////////////////////////
+function setStayDuration(stayDuration)
+{
+
+var check = this.#StayDuration;
+this.#stayDuration = stayDuration;
+return (check != #stayDuration);    //return true if it is changed else false.
+
+}
+/////////////////////////////////////////////////////
+enum RoomType
+{
+
+REGULAR,
+TWOBED,
+FAMILY,
+HONEYMOONSWEET
+
+}
+}
